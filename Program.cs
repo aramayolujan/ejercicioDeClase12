@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ejercicioDeClase12;
+
+namespace ejercicoDeClase12
+{
+    public class probarObjetos
+    {
+        static void Main(string[] args)
+        {
+            ProductoHandler productoHandler = new ProductoHandler();
+
+            productoHandler.GetProductos();
+        }
+    }
+}
