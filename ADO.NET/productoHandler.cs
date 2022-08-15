@@ -1,12 +1,9 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace ejercicioDeClase12
 {
-    public class ProductoHandler
-    {
-        public const string ConnectionString =
-            "Server=LAPTOP-CM3G4G50\\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True";
+    public class ProductoHandler : DbHandler 
+    { 
 
         public List<Producto> GetProductos()
         {
