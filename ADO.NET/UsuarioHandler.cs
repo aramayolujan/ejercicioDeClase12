@@ -54,7 +54,7 @@ namespace ejercicioDeClase12
 
                 return usuarios;
             }
-        public void DeleteUsuario(double idUsuario)
+        public void DeleteUsuario(int idUsuario)
             {
               try
               {
@@ -80,13 +80,13 @@ namespace ejercicioDeClase12
                 Console.WriteLine(ex.Message);
               }    
             }
-        public void UpdateUsuario(double idUsuario, string nuevoNombreUsuario)
+        public void UpdateUsuario(int idUsuario, string nuevoNombreUsuario)
         {
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
                 {
-                    string queryUpdate = "update Usuario set NombreUsuario = '@nuevoNombreUsuario' where Id = @idUsuario";
+                    string queryUpdate = "update Usuario set NombreUsuario = @nuevoNombreUsuario where Id = @idUsuario";
                     SqlParameter parametroNuevoNombre = new SqlParameter();
                     parametroNuevoNombre.ParameterName = "nuevoNombreUsuario";
                     parametroNuevoNombre.SqlDbType = System.Data.SqlDbType.VarChar;
@@ -119,7 +119,7 @@ namespace ejercicioDeClase12
                 using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
                 {
                     string queryAdd = "insert into Usuario (Nombre, Apellido, NombreUsuario,Contraseña, Mail) " +
-                        "values ('@nombre','@apellido','@nombreUsuario','@contraseña','@mail')";
+                        "values (@nombre,@apellido,@nombreUsuario,@contraseña,@mail)";
                     SqlParameter parametroNombre = new SqlParameter();
                     parametroNombre.ParameterName = "nombre";
                     parametroNombre.SqlDbType = System.Data.SqlDbType.VarChar;

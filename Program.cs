@@ -10,6 +10,15 @@ namespace ejercicoDeClase12
             ProductoHandler productoHandler = new ProductoHandler();
             productoHandler.GetProductos(1);
 
+            ProductoHandler deleteProducto = new ProductoHandler();
+            deleteProducto.DeleteProducto(9);
+
+            ProductoHandler addProducto = new ProductoHandler();
+            addProducto.AddProducto("Remera", 500, 1000, 5, 1);
+
+            ProductoHandler updateProducto = new ProductoHandler();
+            updateProducto.UpdateProducto(2, 3000);
+
             //USUARIO
             UsuarioHandler usuarioHandler = new UsuarioHandler();
             usuarioHandler.GetUsuarios("eperez");
@@ -27,6 +36,15 @@ namespace ejercicoDeClase12
             //PRODUCTO VENDIDO
             ProductoVendidoHandler productoVendidoHandler = new ProductoVendidoHandler();
             productoVendidoHandler.GetProductosVendidos(2);
+
+            ProductoVendidoHandler deleteProductoVendido = new ProductoVendidoHandler();
+            deleteProductoVendido.DeleteProductoVendido(1);
+
+            ProductoVendidoHandler updateProductoVendido = new ProductoVendidoHandler();
+            updateProductoVendido.UpdateProductoVendido(2, 10);
+
+            ProductoVendidoHandler addProductoVendido = new ProductoVendidoHandler();
+            addProductoVendido.AddProductoVendido(5, 15, 4);
 
 
             //VENTA
