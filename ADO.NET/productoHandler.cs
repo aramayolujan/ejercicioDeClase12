@@ -1,18 +1,26 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace ejercicioDeClase12
 {
     public class ProductoHandler : DbHandler 
     { 
 
-        public List<Producto> GetProductos()
+        public List<Producto> GetProductos(int idUsuario)
         {
             List<Producto> productos = new List<Producto>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand sqlCommand = new SqlCommand(
-                    "SELECT * FROM Producto", sqlConnection))
+                    "select * from Producto where IdUsuario = @idUsuario", sqlConnection))
                 {
+                    var parametro = new SqlParameter();
+                    parametro.ParameterName = "idUsuario";
+                    parametro.SqlDbType = SqlDbType.BigInt;
+                    parametro.Value = idUsuario;
+                    sqlCommand.Parameters.Add(parametro);
+
+
                     sqlConnection.Open();
 
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())

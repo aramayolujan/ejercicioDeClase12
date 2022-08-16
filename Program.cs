@@ -8,11 +8,17 @@ namespace ejercicoDeClase12
         {
             ProductoHandler productoHandler = new ProductoHandler();
 
-            productoHandler.GetProductos();
+            productoHandler.GetProductos(1);
 
             UsuarioHandler usuarioHandler = new UsuarioHandler();
 
-            usuarioHandler.GetUsuarios();
+            usuarioHandler.GetUsuarios("eperez");
+
+            ProductoVendidoHandler productoVendidoHandler = new ProductoVendidoHandler();
+
+            productoVendidoHandler.GetProductosVendidos(2);
+
+
         }
     }
 }
