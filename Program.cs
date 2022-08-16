@@ -51,6 +51,15 @@ namespace ejercicoDeClase12
             VentaHandler ventaHandler = new VentaHandler();
             ventaHandler.GetVenta(2);
 
+            VentaHandler deleteVenta = new VentaHandler();
+            deleteVenta.DeleteVenta(6);
+
+            VentaHandler updateVenta = new VentaHandler();
+            updateVenta.UpdateVenta(5, "nuevo comentario");
+
+            VentaHandler addVenta = new VentaHandler();
+            addVenta.AddVenta("nueva venta");
+
 
         }
     }
