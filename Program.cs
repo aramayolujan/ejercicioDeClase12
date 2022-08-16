@@ -10,8 +10,8 @@ namespace ejercicoDeClase12
             ProductoHandler productoHandler = new ProductoHandler();
             productoHandler.GetProductos(1);
 
-            ProductoHandler deleteProducto = new ProductoHandler();
-            deleteProducto.DeleteProducto(9);
+            //ProductoHandler deleteProducto = new ProductoHandler();
+            //deleteProducto.DeleteProducto(9);
 
             ProductoHandler addProducto = new ProductoHandler();
             addProducto.AddProducto("Remera", 500, 1000, 5, 1);
@@ -23,8 +23,8 @@ namespace ejercicoDeClase12
             UsuarioHandler usuarioHandler = new UsuarioHandler();
             usuarioHandler.GetUsuarios("eperez");
 
-            UsuarioHandler deleteUsuario = new UsuarioHandler();
-            deleteUsuario.DeleteUsuario(1);
+            //UsuarioHandler deleteUsuario = new UsuarioHandler();
+            //deleteUsuario.DeleteUsuario(1);
 
             UsuarioHandler updateUsuario = new UsuarioHandler();
             updateUsuario.UpdateUsuario(2, "eperez12");
@@ -37,8 +37,8 @@ namespace ejercicoDeClase12
             ProductoVendidoHandler productoVendidoHandler = new ProductoVendidoHandler();
             productoVendidoHandler.GetProductosVendidos(2);
 
-            ProductoVendidoHandler deleteProductoVendido = new ProductoVendidoHandler();
-            deleteProductoVendido.DeleteProductoVendido(1);
+            //ProductoVendidoHandler deleteProductoVendido = new ProductoVendidoHandler();
+            //deleteProductoVendido.DeleteProductoVendido(1);
 
             ProductoVendidoHandler updateProductoVendido = new ProductoVendidoHandler();
             updateProductoVendido.UpdateProductoVendido(2, 10);
@@ -51,8 +51,8 @@ namespace ejercicoDeClase12
             VentaHandler ventaHandler = new VentaHandler();
             ventaHandler.GetVenta(2);
 
-            VentaHandler deleteVenta = new VentaHandler();
-            deleteVenta.DeleteVenta(6);
+            //VentaHandler deleteVenta = new VentaHandler();
+            //deleteVenta.DeleteVenta(6);
 
             VentaHandler updateVenta = new VentaHandler();
             updateVenta.UpdateVenta(5, "nuevo comentario");
@@ -60,6 +60,14 @@ namespace ejercicoDeClase12
             VentaHandler addVenta = new VentaHandler();
             addVenta.AddVenta("nueva venta");
 
+            //INICIO DE SESION
+            InicioDeSesionHandler inicioDeSesion= new InicioDeSesionHandler();
+            List<Usuario> usuarios = inicioDeSesion.GetInicioDeSesion("tcasazza", "SoyTobiasCasazza");
+            if (usuarios.Count>0)
+            {
+                Console.WriteLine(usuarios.First().Nombre);
+               
+            }
 
         }
     }
